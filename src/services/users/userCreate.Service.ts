@@ -24,12 +24,6 @@ const createUserService = async ({name,email,password,age}:IUserCreate)=>{
     const user = await userRepository.find()
 
 
-    const emailAlreadyExists=user.find((u) => u.email===email)
-
-    if(emailAlreadyExists){
-        throw new Error("Email already exists")
-    }
-
     const newUser = new User()    
     newUser.name = name
     newUser.email = email
