@@ -5,10 +5,10 @@ import { Request,Response } from "express";
 const userUpdateController =async(req:Request,res:Response)=>{
     try
         {
-            const {id}=req.params
-            const{name,email,password,age}=req.body
-
-            const userUpdated= await userUpdateService({name,email,password,age,id})
+            // const {id}=req.params
+            // const{name,email,password,age}=req.body
+            // console.log(name,email,password,age)
+            const userUpdated= await userUpdateService(req)
 
             return res.send(userUpdated)
         }
